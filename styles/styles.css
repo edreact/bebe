@@ -1,9 +1,57 @@
-#resultado {
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    margin: 0;
+}
+
+h1 {
+    text-align: center;
+}
+
+#container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+label, input, button {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+}
+
+button {
     padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:disabled {
+    background-color: #d3d3d3;
+}
+
+#resultado {
+    margin-top: 20px;
+    text-align: center;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
     margin-top: 10px;
-    max-width: 350px;
-    background-color: lightyellow;
-    border: 1px solid grey;
-    border-radius: 10px;
-    box-shadow: 2px 2px grey;
+}
+
+@media (min-width: 768px) {
+    button {
+        width: auto;
+        display: inline-block;
+    }
+
+    input {
+        width: calc(100% - 110px);
+        display: inline-block;
+        margin-right: 10px;
+    }
 }

@@ -9,9 +9,9 @@ function consultaPalavra() {
     }
 
     botao.disabled = true;
-    resultado.innerHTML = "<p>Carregando...</p>";
+    resultado.innerHTML = "Carregando...";
 
-    let url = `https://script.google.com/macros/s/AKfycbwse7G1iBnakUG7RZSMbI9TOVSxxfVLIX_f6_CAwp6BO902J3Q_fni3fB50oU77AeY/exec?palavra=${nome}`;
+    let url = `https://script.google.com/macros/s/AKfycbzIzA9mBph8vHxiSsk71gE_Rl-YCzsPxESgMzIC4m4qf3UwE-LNhp28FSebN8FKdKqM/exec?palavra=${nome}`;
 
     fetch(url)
         .then(function(response) {
@@ -22,10 +22,10 @@ function consultaPalavra() {
         })
         .then(function(data) {
             console.log("Dados recebidos:", data);
-            mostrarPalavra(data.retornoDaSaida, nome);
+            mostrarPalavra(data.retornoDaSaida, nome); // Altere para acessar 'retornoDaSaida'
         })
         .catch(function(error) {
-            resultado.innerHTML = "<p>Não foi possível encontrar a palavra!</p>";
+            resultado.innerHTML = "Ocorreu um erro ao buscar a palavra.";
             console.error("Erro:", error);
         })
         .finally(function() {
@@ -37,15 +37,23 @@ function mostrarPalavra(dados, nomePesquisado) {
     let resultado = document.querySelector('#resultado');
     let encontrou = false;
 
+    // Limpar o resultado anterior
+    resultado.innerHTML = "";
+
+    // Percorrer o array de palavras para encontrar a correspondência
     dados.forEach(function(item) {
         if (item.Nome.toLowerCase() === nomePesquisado) {
-            resultado.innerHTML = `<p>${item.Definicao}</p>`;
+            resultado.innerHTML = `<p>Definição: ${item.Definicao}</p>`;
+            // Se houver uma imagem disponível, mostre-a
+            if (item.Imagem && item.Imagem.trim() !== "") {
+                resultado.innerHTML += `<img src="${item.Imagem}" alt="Imagem de ${item.Nome}" />`;
+            }
             encontrou = true;
         }
     });
 
     if (!encontrou) {
-        resultado.innerHTML = "<p>Não foi possível encontrar a palavra!</p>";
+        resultado.innerHTML = "Não foi possível encontrar a palavra!";
     }
 }
 
