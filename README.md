@@ -1,0 +1,2 @@
+# bebe
+ Dicionário geral
