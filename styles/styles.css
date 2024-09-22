@@ -6,6 +6,12 @@ body, html {
     background-color: white;
     color: black;
     transition: background-color 0.3s, color 0.3s;
+    min-height: 100vh;
+}
+
+/* Certificar que a cor de fundo afete o html e body completamente */
+html, body.dark-mode {
+    background-color: #121212;
 }
 
 #app {
@@ -14,6 +20,7 @@ body, html {
     padding: 20px;
 }
 
+/* Card styles */
 .card {
     background-color: white;
     border-radius: 10px;
