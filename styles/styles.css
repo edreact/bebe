@@ -1,57 +1,102 @@
-body {
-    font-family: Arial, sans-serif;
-    padding: 20px;
+/* Estilos Gerais */
+body, html {
     margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: white;
+    color: black;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-h1 {
-    text-align: center;
-}
-
-#container {
+#app {
     max-width: 600px;
-    margin: 0 auto;
+    margin: 20px auto;
+    padding: 20px;
 }
 
-label, input, button {
-    display: block;
-    width: 100%;
-    margin: 10px 0;
+.card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+h1, h2 {
+    margin: 0;
+    padding-bottom: 10px;
+}
+
+.search-box {
+    display: flex;
+    gap: 10px;
+}
+
+input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
 }
 
 button {
     padding: 10px;
-    background-color: #007BFF;
+    background-color: #2727fe;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-button:disabled {
-    background-color: #d3d3d3;
+button:hover {
+    background-color: #1a1ae3;
 }
 
-#resultado {
-    margin-top: 20px;
-    text-align: center;
-}
-
-img {
+/* Imagem */
+#imagemResultado img {
     max-width: 100%;
-    height: auto;
-    margin-top: 10px;
+    border-radius: 10px;
 }
 
-@media (min-width: 768px) {
-    button {
-        width: auto;
-        display: inline-block;
-    }
+/* Rodapé */
+#card4 {
+    text-align: center;
+    font-size: 14px;
+    color: #777;
+}
 
-    input {
-        width: calc(100% - 110px);
-        display: inline-block;
-        margin-right: 10px;
-    }
+/* Modo Noturno */
+body.dark-mode {
+    background-color: #121212;
+    color: #ddd;
+}
+
+body.dark-mode .card {
+    background-color: #1f1f1f;
+    color: #ddd;
+}
+
+body.dark-mode button {
+    background-color: #2727fe;
+    color: white;
+}
+
+#toggleTheme {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #2727fe;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#toggleTheme:hover {
+    background-color: #1a1ae3;
 }

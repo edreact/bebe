@@ -3,21 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cavalo</title>
-    <link rel="stylesheet" href="./styles/styles.css">
+    <title>Etimol App</title>
+    <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
 
-    <div id="container">
-        <h1>Dicionário Etimológico</h1>
-        <label for="nome">Digite a palavra:</label>
-        <input type="text" id="nome" placeholder="Ex: Pão"/>
-        <button id="pesquisar" onclick="consultaPalavra()">Pesquisar</button>
-        <div id="resultado">
-            <p>Seu resultado aqui:</p>
+    <div id="app">
+        <!-- Card 1: Título e Pesquisa -->
+        <div class="card" id="card1">
+            <h1>Dicionário Etimológico</h1>
+            <div class="search-box">
+                <input type="text" id="nome" placeholder="Digite a palavra..." />
+                <button id="pesquisar" onclick="consultaPalavra()">Pesquisar</button>
+            </div>
+        </div>
+
+        <!-- Card 2: Dados da Pesquisa -->
+        <div class="card" id="card2">
+            <h2>Resultado da pesquisa</h2>
+            <div id="resultado">
+                <p>Seu resultado aqui:</p>
+            </div>
+        </div>
+
+        <!-- Card 3: Imagem (Opcional) -->
+        <div class="card" id="card3" style="display:none;">
+            <h2>Imagem relacionada</h2>
+            <div id="imagemResultado"></div>
+        </div>
+
+        <!-- Card 4: Rodapé -->
+        <div class="card" id="card4">
+            <p>Copyright (c) 2024 edreact</p>
         </div>
     </div>
-    
-    <script src="./script/script.js"></script>
+
+    <!-- Botão para alternar modo claro/escuro -->
+    <button id="toggleTheme" onclick="toggleMode()">Modo Noturno</button>
+
+    <script src="script/script.js"></script>
 </body>
 </html>
