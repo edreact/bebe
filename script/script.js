@@ -15,7 +15,7 @@ function consultaPalavra() {
     imagemResultado.innerHTML = ""; // Limpa a imagem
     card3.style.display = "none"; // Oculta o card da imagem
 
-    let url = `https://script.google.com/macros/s/AKfycbwjK-6VQIwUYl_dVYaCuTKKhisLeG6YHTF0n7gu1vRueXFtYk_NTBFuKP35DpU6Uy4A/exec?palavra=${nome}`;
+    let url = `https://script.google.com/macros/s/AKfycbzVL-Aztzhli8aEGL-XXg6lhWBXoMxicXO6TQ2cB9JfZU2HzcJqcaiZNOlgMBSD1P0/exec?palavra=${nome}`;
 
     fetch(url)
         .then(function(response) {
